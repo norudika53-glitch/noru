@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dear Reyhan — Happy 17th</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fff0f6; --card:#ffffff; --accent:#ff6b8a; --muted:#fbeef4; --text:#2b2b2b;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Poppins",system-ui,Segoe UI,Roboto,Arial;
+    background:linear-gradient(180deg,var(--bg),#fff);
+    color:var(--text);
+    padding:20px;
+  }
+
+  /* Card */
+  .wrap{
+    width:380px; max-width:96%;
+    background:var(--card); border-radius:16px;
+    box-shadow:0 18px 50px rgba(255,105,150,0.12);
+    overflow:hidden; position:relative;
+  }
+
+  header.cover{
+    padding:22px; text-align:center;
+    background:linear-gradient(180deg,#fff,#fff5f9);
+  }
+  .cover h2{margin:0;font-size:18px}
+  .cover p{margin:8px 0 0 0;color:#666;font-size:13px}
+  .cover .date{font-size:13px;opacity:.8;margin-top:6px}
+
+  .pixel-stage{
+    display:flex;align-items:center;justify-content:center;margin-top:14px;
+  }
+
+  /* Pixel couple (simple CSS pixel block) */
+  .pixel{
+    display:grid; grid-template-columns:repeat(6,12px); grid-auto-rows:12px; gap:2px;
+    image-rendering:pixelated; width:max-content;
+    transform-origin:center; animation:float 1600ms ease-in-out infinite;
+  }
+  @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+  .px{width:12px;height:12px}
+
+  /* Colors for pixel blocks */
+  .hair{background:#4a3b2a}
+  .skin{background:#ffd9b3}
+  .shirt{background:#5b8cff}
+  .dress{background:#ff8ab5}
+  .bg{background:transparent}
+
+  /* Buttons */
+  .controls{display:flex;gap:10px;padding:16px;justify-content:center}
+  .btn{flex:1;padding:10px 12px;border-radius:10px;border:none;font-weight:600;cursor:pointer;background:#fff;box-shadow:0 8px 20px rgba(0,0,0,0.06)}
+  .btn.primary{background:linear-gradient(90deg,var(--accent),#ffa8c8);color:#fff;border:none}
+  .btn.secondary{background:#fff;color:var(--accent);border:1px solid rgba(0,0,0,0.05)}
+
+  /* Message page */
+  .panel{padding:18px;display:none}
+  .panel.show{display:block}
+  .title{font-size:17px;text-align:center;margin:6px 0}
+  .sub{font-size:13px;color:#666;text-align:center;margin-bottom:12px}
+
+  /* messages container */
+  #messages{display:flex;flex-direction:column;gap:10px;padding:8px 0;max-height:320px;overflow:auto}
+  .bubble{
+    align-self:flex-start; max-width:86%;
+    background:var(--muted); color:var(--text);
+    padding:12px 14px;border-radius:14px;border:1px solid rgba(0,0,0,0.03);
+    opacity:0; transform:translateY(8px); animation:fadeUp .35s forwards;
+    box-shadow:0 6px 18px rgba(0,0,0,0.04);
+  }
+  .bubble.me{align-self:flex-end;background:linear-gradient(90deg,var(--accent),#ff9ab7);color:#fff}
+
+  @keyframes fadeUp{to{opacity:1;transform:none}}
+
+  .action-row{padding:10px 18px 18px;display:flex;gap:8px;justify-content:center}
+  .small-note{font-size:12px;color:#7a7a7a;text-align:center;padding-bottom:10px}
+
+  /* responsive */
+  @media (max-width:420px){.wrap{width:92%}}
+</style>
+</head>
+<body>
+
+<div class="wrap" role="region" aria-label="Surprise Letter for Reyhan">
+
+  <!-- COVER (surat tertutup) -->
+  <header class="cover" id="cover">
+    <h2>📩 Surat Untuk Kamu</h2>
+    <p style="margin-top:8px">Dear Reyhan ❤️</p>
+    <p class="date">2 Desember 2025</p>
+
+    <div class="pixel-stage" aria-hidden="true">
+      <!-- simple CSS pixel couple (6x6 each) -->
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="pixel" aria-hidden="true">
+          <!-- boy (left 3x3 block visually) -->
+          <!-- row 1 -->
+          <div class="px hair"></div><div class="px hair"></div><div class="px hair"></div><div class="px bg"></div><div class="px bg"></div><div class="px bg"></div>
+          <!-- row 2 -->
+          <div class="px skin"></div><div class="px skin"></div><div class="px skin"></div><div class="px bg"></div><div class="px bg"></div><div class="px bg"></div>
+          <!-- row 3 -->
+          <div class="px shirt"></div><div class="px shirt"></div><div class="px shirt"></div><div class="px bg"></div><div class="px bg"></div><div class="px bg"></div>
+        </div>
+
+        <div style="width:6px"></div>
+
+        <div class="pixel" aria-hidden="true">
+          <!-- girl (right) -->
+          <!-- row 1 -->
+          <div class="px bg"></div><div class="px bg"></div><div class="px bg"></div><div class="px hair"></div><div class="px hair"></div><div class="px hair"></div>
+          <!-- row 2 -->
+          <div class="px bg"></div><div class="px bg"></div><div class="px bg"></div><div class="px skin"></div><div class="px skin"></div><div class="px skin"></div>
+          <!-- row 3 -->
+          <div class="px bg"></div><div class="px bg"></div><div class="px bg"></div><div class="px dress"></div><div class="px dress"></div><div class="px dress"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn primary" id="openBtn" aria-label="Buka surat">Buka 💌</button>
+    </div>
+  </header>
+
+  <!-- MESSAGE PANEL (setelah dibuka) -->
+  <section class="panel" id="panel">
+    <div style="padding:18px 18px 6px">
+      <div class="title">🎀 Happy 17th Birthday, Reyhan 🎀</div>
+      <div class="sub">2 Desember 2025 — Dari: Kalila</div>
+
+      <div class="pixel-stage" style="margin-bottom:6px;">
+        <!-- reuse smaller pixel couple for stage -->
+        <div style="display:flex;gap:8px;align-items:center;justify-content:center">
+          <div class="pixel" style="grid-template-columns:repeat(3,12px);">
+            <div class="px hair"></div><div class="px hair"></div><div class="px hair"></div>
+            <div class="px skin"></div><div class="px skin"></div><div class="px skin"></div>
+            <div class="px shirt"></div><div class="px shirt"></div><div class="px shirt"></div>
+          </div>
+          <div style="width:8px"></div>
+          <div class="pixel" style="grid-template-columns:repeat(3,12px);">
+            <div class="px hair"></div><div class="px hair"></div><div class="px hair"></div>
+            <div class="px skin"></div><div class="px skin"></div><div class="px skin"></div>
+            <div class="px dress"></div><div class="px dress"></div><div class="px dress"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="messages" aria-live="polite"></div>
+
+    </div>
+
+    <div class="action-row">
+      <button class="btn secondary" id="nextBtn">Buka Kata Pertama ✨</button>
+    </div>
+
+    <div class="small-note">Tekan tombol untuk menampilkan satu paragraf per klik. Musik akan otomatis diputar saat membuka surat.</div>
+  </section>
+
+</div>
+
+<!-- audio: replace src if kamu punya mp3 lain. It's triggered after user click (openBtn). -->
+<audio id="bgMusic" preload="auto">
+  <source src="https://cdn.pixabay.com/download/audio/2023/02/27/audio_3e3ee069b4.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+/* --- content array (dari prompt final) --- */
+const messages = [
+  "Selamat ulang tahun yang ke 17, kamu semakin dewasa dan semakin hebat.",
+  "Aku bangga udah berjalan sejauh ini bareng kamu.",
+  "Empat tahun kita bareng bukan kebetulan, tapi pilihan.",
+  "Terima kasih udah jadi pasangan yang selalu jadi tempat pulang.",
+  "Kita udah banyak mabar, berantem dikit, baikan lagi. Tapi tetap saling pilih 💕",
+  "Semoga umur kamu dipenuhi kesehatan, rezeki, mimpi, dan kebahagiaan.",
+  "Dan semoga aku tetap jadi bagian dari semua itu — hari ini, besok, dan nanti. 💗"
+];
+
+let idx = 0;
+const openBtn = document.getElementById('openBtn');
+const panel = document.getElementById('panel');
+const cover = document.getElementById('cover');
+const nextBtn = document.getElementById('nextBtn');
+const messagesEl = document.getElementById('messages');
+const audio = document.getElementById('bgMusic');
+
+/* Open letter: hide cover, show panel, play music */
+openBtn.addEventListener('click', () => {
+  cover.style.display = 'none';
+  panel.classList.add('show');
+  // play audio after user interaction (safe for autoplay)
+  try { audio.currentTime = 0; audio.play().catch(()=>{}); } catch(e){}
+});
+
+/* Next message: show one bubble per click */
+nextBtn.addEventListener('click', () => {
+  if (idx >= messages.length) return;
+  const bubble = document.createElement('div');
+  bubble.className = 'bubble';
+  bubble.innerText = messages[idx];
+  // alternate bubble side (left/right) for visual variety
+  if (idx % 2 === 1) bubble.classList.add('me');
+  messagesEl.appendChild(bubble);
+  // scroll to bottom smoothly
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+  idx++;
+  // update button text / disable on finish
+  if (idx === 1) nextBtn.innerText = 'Lanjut ❤️';
+  if (idx >= messages.length) {
+    nextBtn.innerText = 'Selesai 💗';
+    nextBtn.disabled = true;
+    // optional final flourish: small visual heartbeat on last bubble
+    bubble.animate([{transform:'scale(1)'},{transform:'scale(1.04)'},{transform:'scale(1)'}],{duration:700,iterations:1});
+  }
+});
+
+/* Accessibility: Enter triggers primary actions */
+openBtn.addEventListener('keyup', (e)=>{ if(e.key === 'Enter') openBtn.click(); });
+nextBtn.addEventListener('keyup', (e)=>{ if(e.key === 'Enter') nextBtn.click(); });
+
+</script>
+</body>
+</html>
